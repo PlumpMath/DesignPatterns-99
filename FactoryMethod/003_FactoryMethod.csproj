@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0ECF3294-FA82-4BD1-9A3C-64E58F5175EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FactoryMethod</RootNamespace>
+    <AssemblyName>FactoryMethod</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicStructure\Client.cs" />
+    <Compile Include="BasicStructure\Concrete\ConcreteCreator.cs" />
+    <Compile Include="BasicStructure\Concrete\ConcreteProduct.cs" />
+    <Compile Include="BasicStructure\Abstract\Creator.cs" />
+    <Compile Include="BasicStructure\Abstract\Product.cs" />
+    <Compile Include="CBS implementations\001_FiguresExample\Figures\Figure.cs" />
+    <Compile Include="CBS implementations\001_FiguresExample\Figures\LineFigure.cs" />
+    <Compile Include="CBS implementations\001_FiguresExample\Figures\TextFigure.cs" />
+    <Compile Include="CBS implementations\001_FiguresExample\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CBS implementations\001_FiguresExample\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CBS implementations\001_FiguresExample\Manipulators\LineManipulator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CBS implementations\001_FiguresExample\Manipulators\Manipulator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CBS implementations\001_FiguresExample\Manipulators\TextManipulator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CBS implementations\006_FM_Generic\Client.cs" />
+    <Compile Include="CBS implementations\006_FM_Generic\Creators\ICreator.cs" />
+    <Compile Include="CBS implementations\006_FM_Generic\Creators\StandardCreator.cs" />
+    <Compile Include="CBS implementations\006_FM_Generic\Products\IProduct\IProduct.cs" />
+    <Compile Include="CBS implementations\006_FM_Generic\Products\ProductA.cs" />
+    <Compile Include="CBS implementations\006_FM_Generic\Products\ProductB.cs" />
+    <Compile Include="CBS implementations\006_FM_Generic\Products\ProductC.cs" />
+    <Compile Include="CBS implementations\004_FM_LazyInit\Lazy1.cs" />
+    <Compile Include="CBS implementations\004_FM_LazyInit\Lazy2.cs" />
+    <Compile Include="CBS implementations\004_FM_LazyInit\Lazy3.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Client.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Creators\Creator.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Creators\MyCreator.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Products\MyProduct.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Products\Product.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Products\ProductTypeEnum.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Products\TheirProduct.cs" />
+    <Compile Include="CBS implementations\002_FM_with_argument\Products\YourProduct.cs" />
+    <Compile Include="CBS implementations\003_FM_work_in_constructor_example\Example1.cs" />
+    <Compile Include="CBS implementations\003_FM_work_in_constructor_example\Example2.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Client.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Locator\IServiceLocator.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Locator\ServiceLocator.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Services\IServices\IServiceA.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Services\IServices\IServiceB.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Services\IServices\IServiceC.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Services\ServiceB.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Services\ServiceC.cs" />
+    <Compile Include="CBS implementations\005_ServiceLocator\Services\ServiceA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Desc.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
